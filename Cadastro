@@ -1,0 +1,25 @@
+
+CREATE TABLE if not EXISTS Hist_Perfil(
+
+   idCodigoPerfil INT AUTO_INCREMENT,
+    pontuacao int,   
+    PRIMARY key(idCodigoPerfil)
+
+);
+
+CREATE TABLE if not EXISTS Cadastro(
+
+    idCodigo INT AUTO_INCREMENT,
+    nome varchar(100) NOT NULL,
+    email varchar(100) NOT NULL,
+    senha varchar(20) NOT NULL,
+    sexo varchar(1) NOT NULL,
+    peso DOUBLE(3,1),
+    altura DOUBLE(2,2),
+    idade INT NOT NULL,
+    idCodigo_perfil int,
+    PRIMARY key(idCodigo),
+    FOREIGN KEY(idCodigo_perfil) REFERENCES Hist_Perfil(idCodigoPerfil)
+
+);
+
